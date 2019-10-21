@@ -23,6 +23,9 @@ public class GPSTracker extends Service implements LocationListener {
  
     // flag for network status
     boolean isNetworkEnabled = false;
+
+    // flag for cors
+    boolean isCorsEnabled = true;
  
     // flag for GPS status
     boolean canGetLocation = false;
@@ -114,6 +117,16 @@ public class GPSTracker extends Service implements LocationListener {
             locationManager.removeUpdates(GPSTracker.this);
         }       
     }
+
+    /**
+     * Disable using GPS listener
+     * Calling this function will stop using GPS in your app
+     * */
+    public void disableUsingGPS(){
+        if(locationManager != null){
+            locationManager.removeUpdates(GPSTracker.this);
+        }       
+    }
      
     /**
      * Function to get latitude
@@ -169,11 +182,11 @@ public class GPSTracker extends Service implements LocationListener {
         });
   
         // on pressing cancel button
-        alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-            dialog.cancel();
-            }
-        });
+        // alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        //     public void onClick(DialogInterface dialog, int which) {
+        //     dialog.cancel();
+        //     }
+        // });
   
         // Showing Alert Message
         alertDialog.show();

@@ -12,4 +12,8 @@ public class ExampleUnitTest {
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
     }
+
+    public void addition_isCorrect() throws Exception {
+        assertEquals(12, 12 + 2);
+    }
 }
