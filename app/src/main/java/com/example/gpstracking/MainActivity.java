@@ -108,6 +108,17 @@ startTimer();
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        if(mMapView != null) {
+            mMap = null;
+            mMapView.onDestroy();
+        }
+
+
+    }
+
+    @Override
     public void onMapClick(LatLng latLng) {
 
     }

@@ -181,12 +181,12 @@ public class GPSTracker extends Service implements LocationListener {
             }
         });
   
-        // on pressing cancel button
-        // alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-        //     public void onClick(DialogInterface dialog, int which) {
-        //     dialog.cancel();
-        //     }
-        // });
+        on pressing cancel button
+        alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+            dialog.cancel();
+            }
+        });
   
         // Showing Alert Message
         alertDialog.show();
@@ -206,6 +206,10 @@ public class GPSTracker extends Service implements LocationListener {
  
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
+    }
+
+    @Override
+    public void onStatusReallyChanged(String provider, int status, Bundle extras) {
     }
  
     @Override
